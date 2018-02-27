@@ -20,7 +20,7 @@ class App extends Component {
                     </Navbar.Header>
                     <Navbar.Collapse>
                         <Nav pullRight>
-                            <RouteNavItem key={0} href="/stuff">Stuff</RouteNavItem>,
+                            <RouteNavItem key={0} href="/stuff">Stuff</RouteNavItem>
                         </Nav>
                     </Navbar.Collapse>
                 </Navbar>
