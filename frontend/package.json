@@ -5,12 +5,19 @@
   "dependencies": {
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "react-scripts": "1.1.1"
+    "react-parallax": "^1.6.0",
+    "react-scripts": "1.1.1",
+    "react-tiny-spin": "^0.6.5",
+    "react-toolbox": "2.0.0-beta.12"
   },
   "scripts": {
+    "toolbox": "react-toolbox-themr --config react-toolbox.json",    
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "react-toolbox-themr": "^1.0.2"
   }
 }
