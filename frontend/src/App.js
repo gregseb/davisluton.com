@@ -3,7 +3,7 @@ import { Link, withRouter } from 'react-router-dom';
 import { Nav, Navbar } from 'react-bootstrap';
 import RouteNavItem from './components/RouteNavItem';
 import './App.css';
-
+import Routes from './Routes';
 
 class App extends Component {
 
@@ -24,6 +24,7 @@ class App extends Component {
                         </Nav>
                     </Navbar.Collapse>
                 </Navbar>
+                <Routes />
             </div>
         );
     }

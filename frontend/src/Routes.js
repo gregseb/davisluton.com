@@ -2,28 +2,16 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Loadable from 'react-loadable';
 import AppliedRoute from './components/AppliedRoute';
-import Spinner from './components/Spinner';
-
-function Loading(props) {
-    if (props.error) {
-        return <div>Error!</div>;
-    } else if (props.timedOut) {
-        return <div>Taking a long time...</div>;
-    } else if (props.pastDelay) {
-        return <Spinner />;
-    } else {
-        return null;
-    }
-}
+import LoadingSpinner from './libs/LoadingSpinner';
 
 const AsyncHome = Loadable({
     loader: () => import("./containers/Home"),
-    loading: Loading,
+    loading: LoadingSpinner,
     delay: 200
 });
 const AsyncNotFound = Loadable({
     loader: () => import("./containers/NotFound"),
-    loading: Loading
+    loading: LoadingSpinner
 });
 
 
