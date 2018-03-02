@@ -1,6 +1,13 @@
 version: '3'
 
 services:
+  nginx:
+    image: nginx:latest
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/src
+      - ./config/nginx:/etc/nginx/conf.d
   node:
     image: node:8
     user: "node"
