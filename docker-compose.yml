@@ -4,10 +4,22 @@ services:
   nginx:
     image: nginx:latest
     ports:
+      - "80:80"
       - "8000:8000"
     volumes:
       - .:/src
       - ./config/nginx:/etc/nginx/conf.d
+    depends_on:
+      - web
+
+  web:
+    build: .
+    command: bash -c "python manage.py makemigrations && python manage.py migrate && gunicorn config.wsgi -b 0.0.0.0:8000"
+    volumes:
+      - .:/src
+    depends_on:
+      - db
+
   node:
     image: node:8
     user: "node"
@@ -19,3 +31,8 @@ services:
     volumes:
       - ./frontend:/home/node/app
     command: "yarn start"
+
+  db:
+    image: postgres:latest
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data

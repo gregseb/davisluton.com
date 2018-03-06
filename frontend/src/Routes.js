@@ -2,22 +2,39 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Loadable from 'react-loadable';
 import AppliedRoute from './components/AppliedRoute';
-import LoadingSpinner from './libs/LoadingSpinner';
+import Spinner from './components/Spinner';
+
+function Loading(props) {
+    if (props.error) {
+        return <div>Error!</div>;
+    } else if (props.timedOut) {
+        return <div>Taking a long time...</div>;
+    } else if (props.pastDelay) {
+        return <Spinner />;
+    } else {
+        return null;
+    }
+}
 
 const AsyncHome = Loadable({
     loader: () => import("./containers/Home"),
-    loading: LoadingSpinner,
+    loading: Loading,
     delay: 200
+});
+const AsyncLogin = Loadable({
+    loader: () => import("./containers/Login"),
+    loading: Loading
 });
 const AsyncNotFound = Loadable({
     loader: () => import("./containers/NotFound"),
-    loading: LoadingSpinner
+    loading: Loading
 });
 
 
 export default ({childProps}) =>
     <Switch>
         <AppliedRoute path="/" exact component={AsyncHome} props={childProps} />
+        <AppliedRoute path="/login" exact component={AsyncLogin} props={childProps} />
 
         {/* Catch all unmatched routes. */}
         <Route component={AsyncNotFound} />

@@ -1,1 +1,13 @@
+__pycache__/
+db.sqlite3
+.env
+
 .idea/
+
+config/settings/local.py
+config/settings/production.py
+
+.venv/
+pgdata/
+
+assets/staticfiles/*

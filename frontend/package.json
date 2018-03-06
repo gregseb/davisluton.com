@@ -2,16 +2,18 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://nginx:8000",
   "dependencies": {
-    "react": "^16.2.0",
-    "react-bootstrap": "^0.32.1",
-    "react-dom": "^16.2.0",
-    "react-loadable": "^5.3.1",
-    "react-parallax": "^1.6.0",
+    "bootstrap": "3",
+    "jquery": "^3.2.1",
+    "react": "^16.0.0",
+    "react-bootstrap": "^0.31.3",
+    "react-dom": "^16.0.0",
+    "react-loadable": "^5.2.2",
     "react-router-dom": "^4.2.2",
-    "react-scripts": "1.1.1",
+    "react-scripts": "1.0.17",
     "react-tiny-spin": "^0.6.5",
-    "susy": "^3.0.3"
+    "susy": "^3.0.1"
   },
   "scripts": {
     "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
@@ -24,6 +26,6 @@
   },
   "devDependencies": {
     "node-sass-chokidar": "^0.0.3",
-    "npm-run-all": "^4.1.2"
+    "npm-run-all": "^4.1.1"
   }
 }
