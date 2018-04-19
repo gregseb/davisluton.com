@@ -62,8 +62,9 @@ class App extends Component {
                             {this.state.isAuthenticated
                                 ? <NavItem onClick={this.handleLogout}>Logout</NavItem>
                                 : [
-                                    <RouteNavItem key={1} href="/signup">Signup</RouteNavItem>,
-                                    <RouteNavItem key={2} href="/login">Login</RouteNavItem>
+                                    <RouteNavItem key={1} href="/work">Work</RouteNavItem>,
+                                    <RouteNavItem key={2} href="/about">About</RouteNavItem>,
+                                    <RouteNavItem key={3} href="/contact">Contact</RouteNavItem>
                                 ]}
                         </Nav>
                     </Navbar.Collapse>

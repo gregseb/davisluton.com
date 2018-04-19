@@ -21,10 +21,20 @@ const AsyncHome = Loadable({
     loading: Loading,
     delay: 200
 });
-const AsyncLogin = Loadable({
-    loader: () => import("./containers/Login"),
+
+const AsyncWork = Loadable({
+    loader: () => import("./containers/Work"),
     loading: Loading
 });
+const AsyncAbout = Loadable({
+    loader: () => import("./containers/About"),
+    loading: Loading
+});
+const AsyncContact = Loadable({
+    loader: () => import("./containers/Contact"),
+    loading: Loading
+});
+
 const AsyncNotFound = Loadable({
     loader: () => import("./containers/NotFound"),
     loading: Loading
@@ -34,7 +44,9 @@ const AsyncNotFound = Loadable({
 export default ({childProps}) =>
     <Switch>
         <AppliedRoute path="/" exact component={AsyncHome} props={childProps} />
-        <AppliedRoute path="/login" exact component={AsyncLogin} props={childProps} />
+        <AppliedRoute path="/work" exact component={AsyncWork} props={childProps} />
+        <AppliedRoute path="/about" exact component={AsyncAbout} props={childProps} />
+        <AppliedRoute path="/contact" exact component={AsyncContact} props={childProps} />
 
         {/* Catch all unmatched routes. */}
         <Route component={AsyncNotFound} />
