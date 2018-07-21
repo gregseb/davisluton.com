@@ -26,7 +26,7 @@ class App extends Component {
                     <Navbar.Header>
                         <Navbar.Brand>
                             <Link to="/">
-                                <div class="SiteName">Davis Luton</div>
+                                <div className="SiteName">Davis Luton</div>
                                 <div className="Slogan">graphic design</div>
                             </Link>
                         </Navbar.Brand>
@@ -34,13 +34,9 @@ class App extends Component {
                     </Navbar.Header>
                     <Navbar.Collapse>
                         <Nav pullRight>
-                            {this.state.isAuthenticated
-                                ? <NavItem onClick={this.handleLogout}>Logout</NavItem>
-                                : [
-                                    <RouteNavItem key={1} href="/work">Work</RouteNavItem>,
-                                    <RouteNavItem key={2} href="/about">About</RouteNavItem>,
-                                    <RouteNavItem key={3} href="/contact">Contact</RouteNavItem>
-                                ]}
+                            <RouteNavItem key={1} href="/work">Work</RouteNavItem>
+                            <RouteNavItem key={2} href="/about">About</RouteNavItem>
+                            <RouteNavItem key={3} href="/contact">Contact</RouteNavItem>
                         </Nav>
                     </Navbar.Collapse>
                 </Navbar>

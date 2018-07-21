@@ -5,6 +5,7 @@
   "proxy": "http://nginx:8000",
   "dependencies": {
     "bootstrap": "3",
+    "fullpage-react": "^3.0.33",
     "jquery": "^3.2.1",
     "react": "^16.0.0",
     "react-bootstrap": "^0.31.3",

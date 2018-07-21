@@ -8,10 +8,28 @@
 
 nav.navbar {
   border: unset;
-  background: unset;
+  background: #f8f8f8;
   -webkit-box-shadow: unset;
   -moz-box-shadow: unset;
   box-shadow: unset;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 8rem;
+  width: 100%;
+  z-index: 500;
+}
+
+nav .navbar-collapse {
+  border-top: unset;
+}
+
+nav .navbar-nav {
+  background: #f8f8f8;
+}
+
+ul.navbar-right li {
+  font-weight: bold;
 }
 
 .SiteName {
@@ -23,8 +41,4 @@ nav.navbar {
   font-size: 1.5rem;
   font-weight: bold;
   margin: 3px 0 3rem 1rem;
-}
-
-ul.navbar-right li {
-  font-weight: bold;
 }
